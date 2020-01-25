@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Log out user
      * @param view the View
      */
     public void logoutUser(View view) {
@@ -240,6 +241,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, ChooseLoginOrRegistrationActivity.class);
         startActivity(intent);
         finish();
+        return;
+    }
+
+    /**
+     * Switch view to Settings view
+     *
+     * @param view the settings view
+     */
+    public void goToSettings(View view) {
+        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        intent.putExtra("userSex", userSex);
+        startActivity(intent);
         return;
     }
 }
