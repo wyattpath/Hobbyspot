@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,28 +22,32 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    private ArrayList<String> al;
-    private ArrayAdapter<String> arrayAdapter;
+    private Card cards_data[];
+    private CardArrayAdapter arrayAdapter;
 
     private FirebaseAuth mAuth;
+
     private String userSex;
     private String oppositeUserSex;
+
+    ListView listView;
+    List<Card> rowItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        checkUserSex();
 
         mAuth = FirebaseAuth.getInstance();
 
-        al = new ArrayList<>();
+        checkUserSex();
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al);
+        rowItems = new ArrayList<Card>();
+
+        arrayAdapter = new CardArrayAdapter(this, R.layout.item, rowItems);
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                al.remove(0);
+                rowItems.remove(0);
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -168,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 if (dataSnapshot.exists()) {
-                    al.add(dataSnapshot.child("name").getValue().toString());
+                    Card item = new Card(dataSnapshot.getKey(), dataSnapshot.child("name").getValue().toString());
+                    rowItems.add(item);
                     arrayAdapter.notifyDataSetChanged();
                 }
             }
