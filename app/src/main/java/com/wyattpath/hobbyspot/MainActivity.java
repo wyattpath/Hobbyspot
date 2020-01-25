@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String userSex;
     private String oppositeUserSex;
+    private String currentUId;
+
+    private DatabaseReference usersDb;
 
     ListView listView;
     List<Card> rowItems;
@@ -41,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        usersDb = FirebaseDatabase.getInstance().getReference().child("Users");
         mAuth = FirebaseAuth.getInstance();
+        currentUId = mAuth.getCurrentUser().getUid();
 
         checkUserSex();
 
@@ -63,14 +68,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onLeftCardExit(Object dataObject) {
-                //Do something on the left!
-                //You also have access to the original object.
-                //If you want to use it just cast it (String) dataObject
+                Card obj = (Card) dataObject;
+                String userId = obj.getUserId();
+                usersDb.child(oppositeUserSex).child(userId).child("connections").child("no").child(currentUId).setValue(true);
                 makeToast(MainActivity.this, "Left!");
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
+                Card obj = (Card) dataObject;
+                String userId = obj.getUserId();
+                usersDb.child(oppositeUserSex).child(userId).child("connections").child("yes").child(currentUId).setValue(true);
                 makeToast(MainActivity.this, "Right!");
             }
 
@@ -171,7 +179,11 @@ public class MainActivity extends AppCompatActivity {
         oppositeSexDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                if (dataSnapshot.exists()) {
+                if (
+                        dataSnapshot.exists() &&
+                                !dataSnapshot.child("connections").child("no").hasChild(currentUId) &&
+                                !dataSnapshot.child("connections").child("yes").hasChild(currentUId)
+                ) {
                     Card item = new Card(dataSnapshot.getKey(), dataSnapshot.child("name").getValue().toString());
                     rowItems.add(item);
                     arrayAdapter.notifyDataSetChanged();
@@ -198,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
      * @param view the View
      */
     public void logoutUser(View view) {
