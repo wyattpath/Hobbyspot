@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         currentUserConnectionsDb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) {
                     makeToast(MainActivity.this, "New Match!");
                     usersDb.child(oppositeUserSex).child(dataSnapshot.getKey()).child("connections").child("matches").child(currentUId).setValue(true);
                     usersDb.child(userSex).child(currentUId).child("connections").child("matches").child(dataSnapshot.getKey()).setValue(true);
@@ -207,7 +207,16 @@ public class MainActivity extends AppCompatActivity {
                                 !dataSnapshot.child("connections").child("no").hasChild(currentUId) &&
                                 !dataSnapshot.child("connections").child("yes").hasChild(currentUId)
                 ) {
-                    Card item = new Card(dataSnapshot.getKey(), dataSnapshot.child("name").getValue().toString());
+                    String profileImageUrl;
+                    if(dataSnapshot.child("profileImageUrl").getValue() == null) {
+                        profileImageUrl= "default";
+                    } else {
+                        profileImageUrl = dataSnapshot.child("profileImageUrl").getValue().toString();
+                    }
+                    Card item = new Card(
+                            dataSnapshot.getKey(),
+                            dataSnapshot.child("name").getValue().toString(),
+                            profileImageUrl);
                     rowItems.add(item);
                     arrayAdapter.notifyDataSetChanged();
                 }
@@ -234,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Log out user
+     *
      * @param view the View
      */
     public void logoutUser(View view) {

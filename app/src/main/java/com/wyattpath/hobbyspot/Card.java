@@ -3,9 +3,11 @@ package com.wyattpath.hobbyspot;
 public class Card {
     private String userId;
     private String name;
-    public Card (String userId, String name) {
+    private String profileImageUrl;
+    public Card (String userId, String name, String profileImageUrl) {
         this.userId = userId;
         this.name = name;
+        this.profileImageUrl = profileImageUrl;
     }
 
     public String getUserId() {
@@ -22,5 +24,13 @@ public class Card {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
     }
 }
