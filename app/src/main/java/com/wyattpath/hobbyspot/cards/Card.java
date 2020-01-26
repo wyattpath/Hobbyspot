@@ -1,4 +1,4 @@
-package com.wyattpath.hobbyspot;
+package com.wyattpath.hobbyspot.cards;
 
 public class Card {
     private String userId;

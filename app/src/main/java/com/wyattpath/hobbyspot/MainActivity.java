@@ -21,6 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
+import com.wyattpath.hobbyspot.cards.Card;
+import com.wyattpath.hobbyspot.cards.CardArrayAdapter;
+import com.wyattpath.hobbyspot.matches.MatchListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -228,7 +231,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToSettings(View view) {
         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-        intent.putExtra("userSex", userSex);
+        startActivity(intent);
+        return;
+    }
+
+    public void goToMatches(View view) {
+        Intent intent = new Intent(MainActivity.this, MatchListActivity.class);
         startActivity(intent);
         return;
     }
