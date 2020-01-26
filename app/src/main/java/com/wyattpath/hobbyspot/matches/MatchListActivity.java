@@ -78,7 +78,6 @@ public class MatchListActivity extends AppCompatActivity {
                         name = dataSnapshot.child("name").getValue().toString();
                     }
 
-
                     if (dataSnapshot.child("profileImageUrl").getValue() != null) {
                         profileImageUrl = dataSnapshot.child("profileImageUrl").getValue().toString();
                     }
