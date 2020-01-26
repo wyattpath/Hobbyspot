@@ -1,6 +1,7 @@
 package com.wyattpath.hobbyspot.chat;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +56,7 @@ public class ChatActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setNestedScrollingEnabled(false);
-        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(false);
         mChatLayoutManager = new LinearLayoutManager(ChatActivity.this);
         mRecyclerView.setLayoutManager(mChatLayoutManager);
         mChatAdapter = new ChatAdapter(getChatList(), ChatActivity.this);
@@ -93,12 +95,60 @@ public class ChatActivity extends AppCompatActivity {
                 if(dataSnapshot.exists()) {
                     chatId = dataSnapshot.getValue().toString();
                     mDatabaseChat = mDatabaseChat.child(chatId);
+                    getChatMessages();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    private void getChatMessages() {
+        mDatabaseChat.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                if(dataSnapshot.exists()) {
+                    String message = null;
+                    String createdByUser = null;
+
+                    if(dataSnapshot.child("text").getValue()!=null) {
+                        message = dataSnapshot.child("text").getValue().toString();
+                    }
+                    if(dataSnapshot.child("createdByUser").getValue()!=null) {
+                        createdByUser = dataSnapshot.child("createdByUser").getValue().toString();
+                    }
+
+                    if(message != null && createdByUser != null) {
+                        Boolean isCurrentUser = false;
+
+                        if(createdByUser.equals(currentUserId)) {
+                            isCurrentUser = true;
+                        }
+                        Chat newMessage = new Chat(message, isCurrentUser);
+                        chatList.add(newMessage);
+                        mChatAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
     }
