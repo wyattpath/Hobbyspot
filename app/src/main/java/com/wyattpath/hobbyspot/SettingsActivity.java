@@ -87,6 +87,10 @@ public class SettingsActivity extends AppCompatActivity {
                         name = map.get("name").toString();
                         mNameField.setText(name);
                     }
+                    if (map.get("phone") != null) {
+                        phone = map.get("phone").toString();
+                        mPhoneField.setText(phone);
+                    }
                     if (map.get("sex") != null) {
                         userSex = map.get("sex").toString();
                     }
