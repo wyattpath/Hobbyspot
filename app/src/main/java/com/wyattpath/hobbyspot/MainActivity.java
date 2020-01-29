@@ -103,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-                makeToast(MainActivity.this, "Clicked!");
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#CECACA"
     android:orientation="vertical"
-    tools:context=".SettingsActivity">
+    tools:context=".ProfileActivity">
 
     <View
         android:layout_width="match_parent"
