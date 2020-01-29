@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/app_background"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -16,6 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="logoutUser"
+            android:textColor="@android:color/white"
+            android:background="#9b0000"
             android:text="SignOut" />
 
         <Button
@@ -23,12 +26,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="goToMatches"
-            android:text="Matches" />
+            android:textColor="@android:color/white"
+            android:text="Matches"
+            android:background="#00838f"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="goToSettings"
+            android:background="#005662"
+            android:textColor="@android:color/white"
             android:text="Settings" />
     </LinearLayout>
 
@@ -36,7 +43,7 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
+        android:background="@drawable/app_background"
         app:rotation_degrees="15.5"
         tools:context=".MyActivity" />
 
