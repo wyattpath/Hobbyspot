@@ -15,9 +15,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
-        android:text="Willkommen\nZurück"
+        android:text="Einloggen"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="45sp"
         android:textStyle="bold">
 
     </TextView>
