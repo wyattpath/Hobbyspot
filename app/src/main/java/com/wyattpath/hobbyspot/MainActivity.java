@@ -178,8 +178,9 @@ public class MainActivity extends AppCompatActivity {
                                 !dataSnapshot.child("connections").child("no").hasChild(currentUId) &&
                                 !dataSnapshot.child("connections").child("yes").hasChild(currentUId) &&
                                 dataSnapshot.child("sex").getValue() != null &&
-                                dataSnapshot.child("sex").getValue().toString().equals(oppositeUserSex)
-                ) {
+                                (dataSnapshot.child("sex").getValue().toString().equals(oppositeUserSex) ||
+                                        dataSnapshot.child("sex").getValue().toString().equals(userSex))
+                                ) {
                     String profileImageUrl;
                     if (dataSnapshot.child("profileImageUrl").getValue() == null) {
                         profileImageUrl = "default";

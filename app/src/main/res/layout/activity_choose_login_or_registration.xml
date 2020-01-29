@@ -8,21 +8,15 @@
     android:background="@android:color/white"
     tools:context=".ChooseLoginOrRegistrationActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@">
-
-    </TextView>
 
     <ImageView
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_height="300dp"
-        android:layout_marginTop="150dp"
-        android:background="@drawable/logo3">
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="250dp"
+        android:background="@drawable/logo4">
     </ImageView>
 
     <LinearLayout
