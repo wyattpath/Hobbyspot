@@ -36,12 +36,14 @@
             android:layout_marginTop="20dp">
 
             <RadioButton
+                android:hint="Male"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Männlich"
                 android:textColor="@android:color/white" />
 
             <RadioButton
+                android:hint="Female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weiblich"
