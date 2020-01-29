@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/app_background"
+    android:orientation="vertical"
     tools:context="com.wyattpath.hobbyspot.RegistrationActivity">
+
     <TextView
 
         android:layout_width="wrap_content"
@@ -20,6 +21,7 @@
         android:textStyle="bold">
 
     </TextView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,24 +29,25 @@
         android:orientation="vertical">
 
         <RadioGroup
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp">
 
             <RadioButton
-                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Male" />
+                android:text="Male"
+                android:textColor="@android:color/white" />
 
             <RadioButton
-                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female" />
+                android:text="Female"
+                android:textColor="@android:color/white" />
         </RadioGroup>
+
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
@@ -78,23 +81,24 @@
             android:textColorHint="@android:color/white" />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/register"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20px"
             android:background="#00838f"
-            android:text="login"
+            android:text="register"
             android:textColor="#ffffff" />
+
         <Button
-            android:textColor="#ffffff"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="6dp"
+            android:id="@+id/backToStart"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:text="Zurück"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
             android:background="#005662"
-            android:id="@+id/backToStart"/>
+            android:text="Zurück"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 </LinearLayout>

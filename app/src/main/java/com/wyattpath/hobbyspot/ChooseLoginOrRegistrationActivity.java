@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class ChooseLoginOrRegistrationActivity extends AppCompatActivity {
 
     private Button mLogin, mRegister;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,22 +18,16 @@ public class ChooseLoginOrRegistrationActivity extends AppCompatActivity {
         mLogin = (Button) findViewById(R.id.login);
         mRegister = (Button) findViewById(R.id.register);
 
-        mLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChooseLoginOrRegistrationActivity.this, LoginActivity.class);
-                startActivity(intent);
-                return;
-            }
+        mLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(ChooseLoginOrRegistrationActivity.this, LoginActivity.class);
+            startActivity(intent);
+            return;
         });
 
-        mRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChooseLoginOrRegistrationActivity.this, RegistrationActivity.class);
-                startActivity(intent);
-                return;
-            }
+        mRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(ChooseLoginOrRegistrationActivity.this, RegistrationActivity.class);
+            startActivity(intent);
+            return;
         });
     }
 }
