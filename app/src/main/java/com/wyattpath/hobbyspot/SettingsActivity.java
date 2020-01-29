@@ -102,7 +102,6 @@ public class SettingsActivity extends AppCompatActivity {
                     if (map.get("sex") != null) {
                         userSex = map.get("sex").toString();
                     }
-                    Glide.clear(mProfileImage);
                     if (map.get("profileImageUrl") != null) {
                         profileImageUrl = map.get("profileImageUrl").toString();
                         switch (profileImageUrl) {
@@ -113,7 +112,6 @@ public class SettingsActivity extends AppCompatActivity {
                                 Glide.with(getApplication()).load(profileImageUrl).into(mProfileImage);
                                 break;
                         }
-                        Glide.with(getApplication()).load(profileImageUrl).into(mProfileImage);
                     }
                 }
             }
