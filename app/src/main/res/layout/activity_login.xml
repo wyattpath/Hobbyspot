@@ -54,19 +54,23 @@
 
         <Button
             android:id="@+id/login"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20px"
             android:background="#00838f"
             android:text="login"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#ffffff" />
         <Button
             android:textColor="#ffffff"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="6dp"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="40dp"
             android:text="Zurück"
             android:background="#005662"
             android:id="@+id/backToStart"/>
