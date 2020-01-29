@@ -44,6 +44,8 @@ public class SettingsActivity extends AppCompatActivity {
     private DatabaseReference mUserDatabase;
 
     private String userId, name, phone, profileImageUrl, userSex;
+    private String[] randomLocation = {"Hamburg-Mitte", "Altona", "Eimsbüttel", "Hamburg-Nord", "Wandsbek", "Bergedorf", "Harburg"};
+
 
     private Uri resultUri;
 
@@ -59,8 +61,8 @@ public class SettingsActivity extends AppCompatActivity {
         mDescriptionField = (EditText) findViewById(R.id.description);
         mLocationField = (EditText) findViewById(R.id.location);
         // Fake data
-        mAgeField.setText(String.format("%s", Integer.toString((int)Math.floor(Math.random()* 100))));
-        mLocationField.setText(String.format("%s", "Hamburg"));
+        mAgeField.setText(String.format("%s", Integer.toString((int) Math.floor(Math.random() * 100))));
+        mLocationField.setText(String.format("%s", randomLocation[(int) Math.floor(Math.random() * randomLocation.length)]));
         mDescriptionField.setText(String.format("%s", "Ich brauche Freunde :("));
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);

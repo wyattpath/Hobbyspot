@@ -104,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                Card obj = (Card) dataObject;
+                String userId = obj.getUserId();
+                Bundle bundle = new Bundle();
+                bundle.putString("userId", userId);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
