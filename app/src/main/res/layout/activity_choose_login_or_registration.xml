@@ -4,47 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseLoginOrRegistrationActivity"
-    android:orientation="vertical">
-    <stroke
-        android:width="1dp"
-        android:color="#212121"/>
-    <corners
-        android:radius="7dp" />
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".ChooseLoginOrRegistrationActivity">
 
-    <padding
-        android:left="1dp"
-        android:right="1dp"
-        android:top="1dp"
-        android:bottom="1dp"/>
     <TextView
-        android:fontFamily="@"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fontFamily="@">
 
     </TextView>
+
+    <ImageView
+        android:layout_marginStart="50dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/logo3">
+
+    </ImageView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        >
+        android:orientation="vertical">
 
-    <Button
-        android:padding="25dp"
-        android:textColor="#ffffff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="login"
-        android:background="#00838f"
-        android:id="@+id/login"/>
-    <Button
-        android:padding="25dp"
-        android:textColor="#ffffff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="register"
-        android:background="#005662"
-        android:id="@+id/register"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00838f"
+            android:padding="25dp"
+            android:text="login"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#005662"
+            android:padding="25dp"
+            android:text="register"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 </RelativeLayout>

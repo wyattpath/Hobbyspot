@@ -18,16 +18,18 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button mLogin;
+    private Button mLogin, mBackToStart;
     private EditText mEmail, mPassword;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         mAuth = FirebaseAuth.getInstance();
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -44,7 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         };
 
         mLogin = (Button) findViewById(R.id.login);
-
+        mBackToStart = (Button) findViewById(R.id.backToStart);
+        mBackToStart.setOnClickListener(V -> finish());
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
 

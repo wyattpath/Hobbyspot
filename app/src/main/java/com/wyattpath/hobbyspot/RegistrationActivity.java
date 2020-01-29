@@ -27,6 +27,7 @@ import java.util.Map;
 public class RegistrationActivity extends AppCompatActivity {
 
     private Button mRegister;
+    private Button mBackToStart;
     private EditText mEmail, mPassword, mName;
 
     private RadioGroup mRadioGroup;
@@ -38,6 +39,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
 
         mAuth = FirebaseAuth.getInstance();
         firebaseAuthStateListener = firebaseAuth -> {
@@ -51,14 +53,15 @@ public class RegistrationActivity extends AppCompatActivity {
         };
 
         mRegister = (Button) findViewById(R.id.register);
-
+        mBackToStart = (Button) findViewById(R.id.backToStart);
+        mBackToStart.setOnClickListener(V -> finish());
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
         mName = (EditText) findViewById(R.id.name);
 
         mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
-        mRegister.setOnClickListener((view) -> {
+        mRegister.setOnClickListener(view -> {
 
             int selectId = mRadioGroup.getCheckedRadioButtonId();
 

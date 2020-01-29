@@ -5,50 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/app_background"
     tools:context="com.wyattpath.hobbyspot.RegistrationActivity">
+    <TextView
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="name" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="8dp"
+        android:text="Registrieren"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    </TextView>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
 
-        <RadioButton
+        <RadioGroup
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Male" />
+
+            <RadioButton
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Name eingeben"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Email eingeben"
+            android:padding="15dp"
+            android:textColorHint="@android:color/white" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Both" />
-    </RadioGroup>
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Password eingeben"
+            android:padding="15dp"
+            android:textColorHint="@android:color/white" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="email" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20px"
+            android:background="#00838f"
+            android:text="login"
+            android:textColor="#ffffff" />
+        <Button
+            android:textColor="#ffffff"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:text="Zurück"
+            android:background="#005662"
+            android:id="@+id/backToStart"/>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password" />
-
-    <Button
-        android:id="@+id/register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register" />
+    </LinearLayout>
 </LinearLayout>
