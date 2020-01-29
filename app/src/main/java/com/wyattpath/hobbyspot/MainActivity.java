@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 String userId = obj.getUserId();
                 // register swipes
                 usersDb.child(userId).child("connections").child("no").child(currentUId).setValue(true);
-                makeToast(MainActivity.this, "Left!");
+                makeToast(MainActivity.this, "Nein!");
             }
 
             @Override
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 // register swipes
                 usersDb.child(userId).child("connections").child("yes").child(currentUId).setValue(true);
                 isConnectionMatch(userId);
-                makeToast(MainActivity.this, "Right!");
+                makeToast(MainActivity.this, "Ja!");
             }
 
             @Override
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    makeToast(MainActivity.this, "New Chat!");
+                    makeToast(MainActivity.this, "New Match!");
 
                     String key = FirebaseDatabase.getInstance().getReference().child("chat").push().getKey();
 

@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private EditText mNameField, mPhoneField;
+    private EditText mNameField, mPhoneField, mAgeField, mLocationField, mDescriptionField;
 
     private Button mBack, mConfirm;
 
@@ -56,6 +56,13 @@ public class SettingsActivity extends AppCompatActivity {
 
         mNameField = (EditText) findViewById(R.id.name);
         mPhoneField = (EditText) findViewById(R.id.phone);
+        mAgeField = (EditText) findViewById(R.id.age);
+        mDescriptionField = (EditText) findViewById(R.id.description);
+        mLocationField = (EditText) findViewById(R.id.location);
+        // Fake data
+        mAgeField.setText(String.format("%s", Integer.toString((int)Math.floor(Math.random()* 100))));
+        mLocationField.setText(String.format("%s", "Hamburg"));
+        mDescriptionField.setText(String.format("%s", "Ich brauche Freunde :("));
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 
