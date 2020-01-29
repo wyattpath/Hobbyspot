@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#9b0000"
             android:onClick="logoutUser"
-            android:text="SignOut"
+            android:text="Ausloggen"
             android:textColor="@android:color/white" />
 
         <Button
@@ -36,7 +36,7 @@
             android:layout_weight="1"
             android:background="#005662"
             android:onClick="goToSettings"
-            android:text="Settings"
+            android:text="Einstellungen"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

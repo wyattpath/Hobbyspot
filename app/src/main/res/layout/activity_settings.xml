@@ -62,7 +62,6 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="100dp"
                             android:hint="Name"
-                            android:text="Nam Le"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -80,7 +79,7 @@
                             android:layout_height="wrap_content"
                             android:background="#00838f"
                             android:textColor="@android:color/white"
-                            android:text="confirm" />
+                            android:text="Bestätigen" />
 
                         <Button
                             android:id="@+id/back"
@@ -89,7 +88,7 @@
                             android:background="#005662"
                             android:layout_marginTop="6dp"
                             android:textColor="@android:color/white"
-                            android:text="back" />
+                            android:text="Zurück" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:background="#00838f"
             android:padding="25dp"
-            android:text="login"
+            android:text="Einloggen"
             android:textColor="#ffffff" />
 
         <Button
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:background="#005662"
             android:padding="25dp"
-            android:text="register"
+            android:text="Registrieren"
             android:textColor="#ffffff" />
     </LinearLayout>
 </RelativeLayout>
