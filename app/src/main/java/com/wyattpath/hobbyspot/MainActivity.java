@@ -250,4 +250,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         return;
     }
+
+    public void selectLeft(View view) {
+        SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
+        flingContainer.getTopCardListener().selectLeft();
+    }
+    public void selectRight(View view) {
+        SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
+        flingContainer.getTopCardListener().selectRight();
+    }
 }
