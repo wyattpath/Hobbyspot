@@ -24,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView mNameField, mPhoneField, mAgeField, mSexField, mLocationField, mDescriptionField;
+    private TextView mNameField, mPhoneField, mAgeField, mSexField, mHobbyField, mLocationField, mDescriptionField;
 
     private Button mBack;
 
@@ -44,6 +44,13 @@ public class ProfileActivity extends AppCompatActivity {
             "https://i.pinimg.com/236x/bb/1c/c2/bb1cc2c07bff46d042fc5639da357246--sports-basketball-teddy-bears.jpg",
             "https://acegif.com/wp-content/uploads/funny-faces-42-gap.jpg"
     };
+
+    private String[] randomHobbies = {
+            "Samurai Schwerter sammeln", "LARPing", "Hacking", "Hexenkunst", "Zeitreisen",
+            "Arbeiten", "Online mit Leuten streiten", "Celebrities stalken", "Awesome sein",
+            "Schlafen", "Ich habe 14 Katzen", "Cosplay", "Blut spenden", "Netflix und chill",
+            "Scrabble", "Tod spielen", "Frösche sezieren", "Essen", "Weltraum", "Batman sein", "GAMIIIIIIIIIING",
+            "Knoten", "Das willst du nicht wissen...", "Extrem bügeln", "Ich mag nichts tun"};
 
     private FirebaseAuth mAuth;
     private DatabaseReference mUserDatabase;
@@ -83,12 +90,14 @@ public class ProfileActivity extends AppCompatActivity {
         mPhoneField = (TextView) findViewById(R.id.phone);
         mSexField = (TextView) findViewById(R.id.sex);
         mAgeField = (TextView) findViewById(R.id.age);
+        mHobbyField = (TextView) findViewById(R.id.hobby);
         mDescriptionField = (TextView) findViewById(R.id.description);
         mLocationField = (TextView) findViewById(R.id.location);
         // Fake data
         mAgeField.setText(String.format("%s", Integer.toString((int) Math.floor(Math.random() * 100))));
         mLocationField.setText(String.format("%s", randomLocation[(int) Math.floor(Math.random() * randomLocation.length)]));
         mDescriptionField.setText(String.format("%s", randomDescription[(int) Math.floor(Math.random() * randomDescription.length)]));
+        mHobbyField.setText(String.format("%s", randomHobbies[(int) Math.floor(Math.random() * randomHobbies.length)]));
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 

@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private EditText mNameField, mPhoneField, mAgeField, mLocationField, mDescriptionField;
+    private EditText mNameField, mPhoneField, mAgeField, mLocationField, mDescriptionField, mHobbyField;
 
     private Button mBack, mConfirm;
 
@@ -60,7 +60,12 @@ public class SettingsActivity extends AppCompatActivity {
             "https://i.pinimg.com/236x/bb/1c/c2/bb1cc2c07bff46d042fc5639da357246--sports-basketball-teddy-bears.jpg",
             "https://acegif.com/wp-content/uploads/funny-faces-42-gap.jpg"
     };
-
+    private String[] randomHobbies = {
+            "Samurai Schwerter sammeln", "LARPing", "Hacking", "Hexenkunst", "Zeitreisen",
+            "Arbeiten", "Online mit Leuten streiten", "Celebrities stalken", "Awesome sein",
+            "Schlafen", "Ich habe 14 Katzen", "Cosplay", "Blut spenden", "Netflix und chill",
+            "Scrabble", "Tod spielen", "Frösche sezieren", "Essen", "Weltraum", "Batman sein", "GAMIIIIIIIIIING",
+            "Knoten", "Das willst du nicht wissen...", "Extrem bügeln", "Ich mag nichts tun"};
 
     private Uri resultUri;
 
@@ -75,10 +80,12 @@ public class SettingsActivity extends AppCompatActivity {
         mAgeField = (EditText) findViewById(R.id.age);
         mDescriptionField = (EditText) findViewById(R.id.description);
         mLocationField = (EditText) findViewById(R.id.location);
+        mHobbyField = (EditText) findViewById(R.id.hobby);
         // Fake data
         mAgeField.setText(String.format("%s", Integer.toString((int) Math.floor(Math.random() * 100))));
         mLocationField.setText(String.format("%s", randomLocation[(int) Math.floor(Math.random() * randomLocation.length)]));
         mDescriptionField.setText(String.format("%s", "Ich brauche Freunde :("));
+        mHobbyField.setText(String.format("%s", randomHobbies[(int) Math.floor(Math.random() * randomHobbies.length)]));
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 

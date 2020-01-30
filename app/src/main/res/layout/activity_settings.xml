@@ -107,6 +107,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@null"
+                            android:text="Hobby"/>
+                        <EditText
+                            android:id="@+id/hobby"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20sp"
+                            android:background="@null"
+                            android:hint="-" />
+                        <TextView
+                            android:textSize="16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
                             android:text="Beschreibung"/>
                         <EditText
                             android:id="@+id/description"
