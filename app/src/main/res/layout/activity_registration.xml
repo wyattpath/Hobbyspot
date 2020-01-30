@@ -36,16 +36,16 @@
             android:layout_marginTop="20dp">
 
             <RadioButton
-                android:hint="Male"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:hint="Male"
                 android:text="Männlich"
                 android:textColor="@android:color/white" />
 
             <RadioButton
-                android:hint="Female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="Female"
                 android:text="Weiblich"
                 android:textColor="@android:color/white" />
         </RadioGroup>
@@ -79,7 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:hint="Password eingeben"
+            android:hint="Passwort eingeben"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
