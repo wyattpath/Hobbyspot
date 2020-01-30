@@ -72,15 +72,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:text="Telefonnummer"/>
+                            android:text="Geschlecht"/>
                         <TextView
-                            android:id="@+id/phone"
+                            android:id="@+id/sex"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20sp"
                             android:background="@null"
-                            android:hint="-"
-                            android:inputType="phone" />
+                            android:hint="-"/>
                         <TextView
                             android:textSize="16sp"
                             android:layout_marginBottom="4dp"
