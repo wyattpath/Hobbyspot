@@ -36,6 +36,26 @@ public class ProfileActivity extends AppCompatActivity {
     private String userId, name, phone, profileImageUrl, userSex;
     private String[] randomLocation = {"Hamburg-Mitte", "Altona", "Eimsbüttel", "Hamburg-Nord", "Wandsbek", "Bergedorf", "Harburg"};
 
+    private String[] randomDescription = {
+            "Eigentlich wollte ich die Welt erobern ... Aber es regnet!",
+            "Bei jeder Streitfrage gibt es zwei Standpunkte: meinen und den falschen.",
+            "Ich lese keine Anleitungen. Ich drücke Knöpfe, bis es klappt.",
+            "Wenn ich Dir jetzt Recht gebe, liegen wir beide falsch.",
+            "Ich bin freiwillig hier.",
+            "Wenn ich Du wäre, wäre ich gerne ich.",
+            "Meine Nachbarn hören gute Musik – ob sie wollen oder nicht.",
+            "Was passiert, wenn man Cola und Bier gleichzeitig trinkt? Man colabiert.",
+            "Ich brauche Freunde :(",
+            "Ich bin athletisch. Ich surfe das Web stundenlang.",
+            "Wenn ich jemanden treffe, mache ich Schuhkontakt bevor Augenkontakt.",
+            "Manchmal brauche ich den ganzen Tag um nichts zu machen.",
+            "Ich bin nicht faul. Ich spare nur Energie.",
+            "Ich bin von Natur aus witzig, weil mein Leben ein Witz ist :'D",
+            "Bleib ruhig und ignoriere mich.",
+            "Ich glaube Scheitern sollte auch eine Option sein.",
+            "Ich habe so viel gelernt von meinen Fehlern. Ich glaub ich mach noch mehr."
+    };
+
     private Uri resultUri;
 
 
@@ -52,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
         // Fake data
         mAgeField.setText(String.format("%s", Integer.toString((int) Math.floor(Math.random() * 100))));
         mLocationField.setText(String.format("%s", randomLocation[(int) Math.floor(Math.random() * randomLocation.length)]));
-        mDescriptionField.setText(String.format("%s", "Ich brauche Freunde :("));
+        mDescriptionField.setText(String.format("%s", randomDescription[(int) Math.floor(Math.random() * randomDescription.length)]));
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
 
