@@ -52,10 +52,12 @@
 
             <com.lorentzos.flingswipe.SwipeFlingAdapterView
                 android:id="@+id/frame"
-                android:layout_gravity="fill"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="fill"
                 android:background="@drawable/app_background"
+                android:scaleX="2"
+                android:scaleY="2"
                 app:rotation_degrees="15.5"
                 tools:context=".MyActivity">
 
