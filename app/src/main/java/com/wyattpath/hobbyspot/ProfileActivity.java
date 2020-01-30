@@ -24,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView mNameField, mPhoneField, mAgeField, mSexField, mHobbyField, mLocationField, mDescriptionField;
+    private TextView mNameField, mAgeField, mSexField, mHobbyField, mLocationField, mDescriptionField;
 
     private Button mBack;
 
@@ -87,7 +87,6 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         mNameField = (TextView) findViewById(R.id.name);
-        mPhoneField = (TextView) findViewById(R.id.phone);
         mSexField = (TextView) findViewById(R.id.sex);
         mAgeField = (TextView) findViewById(R.id.age);
         mHobbyField = (TextView) findViewById(R.id.hobby);
@@ -122,10 +121,6 @@ public class ProfileActivity extends AppCompatActivity {
                     if (map.get("name") != null) {
                         name = map.get("name").toString();
                         mNameField.setText(name);
-                    }
-                    if (map.get("phone") != null) {
-                        phone = map.get("phone").toString();
-                        mPhoneField.setText(phone);
                     }
                     if (map.get("sex") != null) {
                         userSex = map.get("sex").toString();
